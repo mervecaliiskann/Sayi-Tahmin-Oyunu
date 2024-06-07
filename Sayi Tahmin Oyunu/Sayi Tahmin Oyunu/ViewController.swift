@@ -21,6 +21,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var imgYildiz3: UIImageView!
     @IBOutlet weak var imgYildiz4: UIImageView!
     @IBOutlet weak var imgYildiz5: UIImageView!
+    var yildizlar : [UIImageView] = [UIImageView]() //Yızldızları değişkenlere tanımlarken tipi img oldugundan bu sekilde belirttik.
+    let maxDenemeSayisi : Int = 5
+    var denemeSayisi : Int = 0
+    var hedefSayi : Int = -1
+    var oyunBasarili : Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
