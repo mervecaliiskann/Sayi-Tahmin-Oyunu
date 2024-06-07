@@ -74,6 +74,11 @@ class ViewController: UIViewController {
                    txtTahminSayisi.backgroundColor = UIColor.green
                    txtTahminEdilecekSayi.isSecureTextEntry = false
                 oyunBasarili = true
+        }else{
+            //Eğer kullanıcının girdiği değer düzgün değilse
+            imgTahminDurum.isHidden = false
+            imgTahminDurum.image = UIImage(named: "hata")
+        }
     }
 
 }
