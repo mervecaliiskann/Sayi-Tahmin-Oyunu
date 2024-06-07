@@ -114,5 +114,23 @@ class ViewController: UIViewController {
            
            present(alertController, animated: true, completion: nil)
        }
+    func resetGame() {
+          denemeSayisi = 0
+          hedefSayi = -1
+          oyunBasarili = false
+          lblSonuc.text = ""
+          txtTahminEdilecekSayi.text = ""
+          txtTahminSayisi.text = ""
+          for imageView in yildizlar {
+              imageView.image = UIImage(named: "sariYildiz")
+          }
+          imgKaydet.isHidden = true
+          imgTahminDurum.isHidden = true
+          btnKaydet.isEnabled = true
+          btnDene.isEnabled = false
+          txtTahminEdilecekSayi.isEnabled = true
+          txtTahminEdilecekSayi.isSecureTextEntry = true
+          txtTahminSayisi.backgroundColor = UIColor.white
+      }
 }
 
