@@ -53,6 +53,17 @@ class ViewController: UIViewController {
         if oyunBasarili == true || denemeSayisi > maxDenemeSayisi {
             return
         }
+        if let girilenSayi = Int(txtTahminSayisi.text!) {
+            //eğer kullanıcı düzgün bir değer girdiyse
+            denemeSayisi += 1
+            yildizlar[denemeSayisi-1].image = UIImage(named: "beyazYildiz")
+            imgTahminDurum.isHidden = false
+            if girilenSayi > hedefSayi {
+                imgTahminDurum.image = UIImage(named: "asagi")
+                txtTahminSayisi.backgroundColor = UIColor.red
+            }else if girilenSayi < hedefSayi {
+                imgTahminDurum.image = UIImage(named: "yukari")
+                txtTahminSayisi.backgroundColor = UIColor.red
     }
 
 }
