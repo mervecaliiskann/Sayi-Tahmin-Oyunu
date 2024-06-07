@@ -64,6 +64,16 @@ class ViewController: UIViewController {
             }else if girilenSayi < hedefSayi {
                 imgTahminDurum.image = UIImage(named: "yukari")
                 txtTahminSayisi.backgroundColor = UIColor.red
+            }else {
+                //İki sayı birbirine eşittir.
+                   //oyun başarılı bir şekilde tahmin edildi.
+                   imgTahminDurum.image = UIImage(named: "tamam")
+                   btnKaydet.isEnabled = false
+                   btnDene.isEnabled = false
+                   lblSonuc.text = "DOĞRU TAHMİN! Tebrikler :))"
+                   txtTahminSayisi.backgroundColor = UIColor.green
+                   txtTahminEdilecekSayi.isSecureTextEntry = false
+                oyunBasarili = true
     }
 
 }
