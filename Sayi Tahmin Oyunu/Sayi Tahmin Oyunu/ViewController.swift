@@ -38,6 +38,16 @@ class ViewController: UIViewController {
     }
 
     @IBAction func btnKaydetClicked(_ sender: UIButton) {
+        imgKaydet.isHidden = false
+        if let t = Int(txtTahminEdilecekSayi.text!) {
+            hedefSayi = t
+            btnDene.isEnabled = true
+            txtTahminEdilecekSayi.isEnabled = false
+            btnKaydet.isEnabled = false
+            imgKaydet.image = UIImage(named: "onay")
+        }else{
+            imgKaydet.image = UIImage(named: "hata")
+        }
     }
     @IBAction func btnDeneClicked(_ sender: UIButton) {
     }
