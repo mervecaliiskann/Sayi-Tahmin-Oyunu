@@ -79,6 +79,13 @@ class ViewController: UIViewController {
             imgTahminDurum.isHidden = false
             imgTahminDurum.image = UIImage(named: "hata")
         }
+        if denemeSayisi == maxDenemeSayisi {
+            //buraya gelindiyse oyun başarısız bir şekilde sona ermiştir.
+            btnDene.isEnabled = false
+            imgTahminDurum.image = UIImage(named: "hata")
+            lblSonuc.text = "OYUN BAŞARISIZ! \nArkadaşın \(hedefSayi) Sayısını Girdi."
+            txtTahminEdilecekSayi.isSecureTextEntry = false
+            showGamePlayAgainAlert()
     }
 
 }
