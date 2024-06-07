@@ -23,9 +23,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8RB-nH-P6E">
-                                <rect key="frame" x="139" y="412" width="183" height="34"/>
+                                <rect key="frame" x="139" y="412" width="183" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yukari" translatesAutoresizingMaskIntoConstraints="NO" id="kgW-dk-pDe">
@@ -46,6 +46,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnDeneClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nK1-cb-LrB"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kalan Tahmin Hakkınız " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fr2-Jl-wfq">
                                 <rect key="frame" x="49" y="570" width="295" height="22"/>
@@ -75,7 +78,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SONUÇ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Czl-xh-tZT">
-                                <rect key="frame" x="49" y="676" width="295" height="89"/>
+                                <rect key="frame" x="49" y="661" width="295" height="143"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" red="0.8682839067" green="0.16876049800000001" blue="0.85686188809999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -88,10 +91,10 @@
                                 <color key="textColor" red="0.8682839067" green="0.16876049800000001" blue="0.85686188809999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kvW-pg-CNd">
-                                <rect key="frame" x="77" y="240" width="243" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tahmin Edilecek Sayı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kvW-pg-CNd">
+                                <rect key="frame" x="77" y="240" width="243" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="onay" translatesAutoresizingMaskIntoConstraints="NO" id="tuU-W4-eBZ">
@@ -112,6 +115,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnKaydetClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qle-yG-Ajv"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SAYI TAHMİN OYUNU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZl-MQ-l5q">
                                 <rect key="frame" x="63" y="117" width="271" height="33"/>
@@ -124,6 +130,20 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.96115978082587417" green="0.97877470254545451" blue="0.98604130243566424" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="btnDene" destination="JVr-2R-eOj" id="gRt-mM-UH5"/>
+                        <outlet property="btnKaydet" destination="dLC-So-dmT" id="wpF-LB-QXH"/>
+                        <outlet property="imgKaydet" destination="tuU-W4-eBZ" id="JVU-ur-ZIE"/>
+                        <outlet property="imgTahminDurum" destination="kgW-dk-pDe" id="Fic-55-K1d"/>
+                        <outlet property="imgYildiz1" destination="mpo-Id-2wm" id="2fV-SO-dEO"/>
+                        <outlet property="imgYildiz2" destination="hH5-49-TnI" id="cuL-aM-8U9"/>
+                        <outlet property="imgYildiz3" destination="ZSJ-W7-7m4" id="s5l-jr-OgE"/>
+                        <outlet property="imgYildiz4" destination="U8S-G1-jkm" id="MTs-qu-mzH"/>
+                        <outlet property="imgYildiz5" destination="MrP-rt-zlm" id="qcR-HB-ztB"/>
+                        <outlet property="lblSonuc" destination="Czl-xh-tZT" id="QRH-YO-7dw"/>
+                        <outlet property="txtTahminEdilecekSayi" destination="kvW-pg-CNd" id="eYa-p6-5qU"/>
+                        <outlet property="txtTahminSayisi" destination="8RB-nH-P6E" id="iFZ-8q-W0h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,35 +8,52 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     @IBOutlet weak var txtTahminEdilecekSayi: UITextField!
     @IBOutlet weak var imgKaydet: UIImageView!
     @IBOutlet weak var btnKaydet: UIButton!
+    
     @IBOutlet weak var txtTahminSayisi: UITextField!
     @IBOutlet weak var imgTahminDurum: UIImageView!
     @IBOutlet weak var btnDene: UIButton!
+    
     @IBOutlet weak var lblSonuc: UILabel!
+    
     @IBOutlet weak var imgYildiz1: UIImageView!
     @IBOutlet weak var imgYildiz2: UIImageView!
     @IBOutlet weak var imgYildiz3: UIImageView!
     @IBOutlet weak var imgYildiz4: UIImageView!
     @IBOutlet weak var imgYildiz5: UIImageView!
+    
+    //Ekranda 5 tane yıldızı dizi halinde tutar.
     var yildizlar : [UIImageView] = [UIImageView]() //Yızldızları değişkenlere tanımlarken tipi img oldugundan bu sekilde belirttik.
+    // Kullanıcının yapabileceği max deneme sayısıı
     let maxDenemeSayisi : Int = 5
+    //Kullanıcı kaç tane deneme yaptı
     var denemeSayisi : Int = 0
+    //Tahmin edilmesi gerekn sayı
     var hedefSayi : Int = -1
+    //Oyun başarılı bir şekilde sona erirse burası true oalcak.
     var oyunBasarili : Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         yildizlar = [imgYildiz1,imgYildiz2,imgYildiz3,imgYildiz4,imgYildiz5] //ViewdidLoad da görünür olması için yıldızları tanımladık.
         imgKaydet.isHidden = true // ViewDidLoad göründüğünde "isHidden" imgKaydet i görünmez yaptı.
         imgTahminDurum.isHidden = true
         btnDene.isEnabled = false // Sayı yukarıya henüz girilmediğinden "Dene Buttonu" ilk başta çalışmayacak. Bunun için "isEnable" kullandık.
         txtTahminEdilecekSayi.isSecureTextEntry = true //Kullanıcı değer girdiğinde, değerler gizli kalacak.
         lblSonuc.text = ""
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
-
     @IBAction func btnKaydetClicked(_ sender: UIButton) {
         imgKaydet.isHidden = false
         if let t = Int(txtTahminEdilecekSayi.text!) {
@@ -49,7 +66,9 @@ class ViewController: UIViewController {
             imgKaydet.image = UIImage(named: "hata")
         }
     }
+    
     @IBAction func btnDeneClicked(_ sender: UIButton) {
+        //Kullanıcı oyunu bitirmişse herhangi bir şey yapma geri dön.
         if oyunBasarili == true || denemeSayisi > maxDenemeSayisi {
             return
         }
@@ -74,11 +93,18 @@ class ViewController: UIViewController {
                    txtTahminSayisi.backgroundColor = UIColor.green
                    txtTahminEdilecekSayi.isSecureTextEntry = false
                 oyunBasarili = true
+                showPlayAgainAlert()
+                
+                return
+                   
+               }
+          
         }else{
             //Eğer kullanıcının girdiği değer düzgün değilse
             imgTahminDurum.isHidden = false
             imgTahminDurum.image = UIImage(named: "hata")
         }
+        
         if denemeSayisi == maxDenemeSayisi {
             //buraya gelindiyse oyun başarısız bir şekilde sona ermiştir.
             btnDene.isEnabled = false
@@ -86,8 +112,9 @@ class ViewController: UIViewController {
             lblSonuc.text = "OYUN BAŞARISIZ! \nArkadaşın \(hedefSayi) Sayısını Girdi."
             txtTahminEdilecekSayi.isSecureTextEntry = false
             showGamePlayAgainAlert()
+            return
+        }
     }
-
     func showPlayAgainAlert() {
            let alertController = UIAlertController(title: "TAHMİN DOĞRU!", message: "TEBRİKLER! Yeniden başlamak istiyor musunuz?", preferredStyle: .alert)
            
@@ -133,4 +160,3 @@ class ViewController: UIViewController {
           txtTahminSayisi.backgroundColor = UIColor.white
       }
 }
-
