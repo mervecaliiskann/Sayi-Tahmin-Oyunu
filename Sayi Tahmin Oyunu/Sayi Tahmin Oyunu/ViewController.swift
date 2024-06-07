@@ -101,5 +101,18 @@ class ViewController: UIViewController {
            
            present(alertController, animated: true, completion: nil)
        }
+    func showGamePlayAgainAlert() {
+           let alertController = UIAlertController(title: "TAHMİN YANLIŞ", message: "Girilen Sayı \(hedefSayi). Yeniden başlamak istiyor musunuz?", preferredStyle: .alert)
+           
+           let yesAction = UIAlertAction(title: "Evet", style: .default) { (_) in
+               self.resetGame()
+           }
+           alertController.addAction(yesAction)
+           
+           let noAction = UIAlertAction(title: "Hayır", style: .cancel, handler: nil)
+           alertController.addAction(noAction)
+           
+           present(alertController, animated: true, completion: nil)
+       }
 }
 
