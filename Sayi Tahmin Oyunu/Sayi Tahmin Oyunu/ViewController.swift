@@ -50,6 +50,9 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func btnDeneClicked(_ sender: UIButton) {
+        if oyunBasarili == true || denemeSayisi > maxDenemeSayisi {
+            return
+        }
     }
 
 }
