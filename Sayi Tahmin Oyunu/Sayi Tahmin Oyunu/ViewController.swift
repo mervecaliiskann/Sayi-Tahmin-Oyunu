@@ -29,6 +29,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        yildizlar = [imgYildiz1,imgYildiz2,imgYildiz3,imgYildiz4,imgYildiz5] //ViewdidLoad da görünür olması için yıldızları tanımladık.
+        imgKaydet.isHidden = true // ViewDidLoad göründüğünde "isHidden" imgKaydet i görünmez yaptı.
+        imgTahminDurum.isHidden = true
+        btnDene.isEnabled = false // Sayı yukarıya henüz girilmediğinden "Dene Buttonu" ilk başta çalışmayacak. Bunun için "isEnable" kullandık.
+        txtTahminEdilecekSayi.isSecureTextEntry = true //Kullanıcı değer girdiğinde, değerler gizli kalacak.
+        lblSonuc.text = ""
     }
 
     @IBAction func btnKaydetClicked(_ sender: UIButton) {
